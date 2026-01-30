@@ -1212,6 +1212,24 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* Language Translator Styling */
+        #google_translate_element {
+            margin-left: 20px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Adjust for mobile */
+        @media (max-width: 768px) {
+            #google_translate_element {
+                margin: 10px 0;
+                display: block;
+                text-align: center;
+            }
+        }
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0px !important; }
     </style>
 </head>
 <body>
@@ -1242,6 +1260,7 @@
                     <li><a target="_blank" href="https://halal-Food-authority.vercel.app">Online Food Portal</a></li>
                     <li><a target="_blank" href="https://halal-Food-authority.vercel.app">Login/Register</a></li>
                     <li><a href="conatct.html">Contact</a></li>
+                    <li id="google_translate_element"></li>
                 </ul>
             </nav>
         </div>
@@ -1387,7 +1406,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Who We Are</h3>
-                    <p>The Halal Food Authority  (HCA) is the premier and most trusted halal Food body in . Established in 2005, we are dedicated to ensuring that products, services, and establishments comply with Islamic Shariah law and meet international halal standards.</p>
+                    <p>Since 1994, the Halal Food Authority (HFA) has been a leading provider of comprehensive halal certification and auditing services for both food and non-food producers. Committed to maintaining the highest halal standards, we conduct rigorous monitoring of processes, thorough ingredient evaluations, and precise halal labelling. Accredited by prominent international halal organisations, we guarantee that your products meet global recognition and compliance standards.</p>
                     <p>Our team consists of Islamic scholars, food scientists, and Food experts who work together to provide comprehensive halal Food services. We are recognized by major international halal bodies and government agencies across the globe.</p>
                     <p>Our mission is to facilitate trade, protect Muslim consumers, and promote the halal industry in  while maintaining the highest standards of integrity and professionalism.</p>
                     <div style="margin-top: 30px;">
@@ -1898,6 +1917,17 @@
         </div>
     </footer>
 
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en', 
+            // Optional: Limit to specific languages relevant to Halal trade
+            includedLanguages: 'en,ar,fr,ha,yo,id,ms', 
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
