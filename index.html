@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halal Food Authority  - Official Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="shortcut icon" href="/image/image1-1.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0a5c36;
+            --secondary-color: #1a7c4d;
+            --accent-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --gray-color: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .containerr {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .logo-img {
+            height: 80px;
+            margin-right: 15px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section with Only Slider and News */
+        .hero-container {
+            padding-top: 130px;
+            padding-bottom: 30px;
+            background: linear-gradient(rgba(10, 92, 54, 0.85), rgba(10, 92, 54, 0.9)), url('https://images.unsplash.com/photo-1610360655260-bb6dcc4ac75c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .hero-slider-section {
+            flex: 2;
+            min-width: 300px;
+            animation: fadeInRight 1s ease;
+        }
+
+        @keyframes fadeInRight {
+            from { transform: translateX(30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .hero-slider {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            height: 500px;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            background: rgba(10, 92, 54, 0.85);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 80%;
+            animation: slideUp 0.8s ease 0.3s both;
+        }
+
+        .slide-content h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .slide-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-btn {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-btn.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+
+        .slider-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .arrow {
+            color: white;
+            background-color: rgba(10, 92, 54, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .arrow:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .hero-news-section {
+            flex: 1;
+            min-width: 300px;
+            animation: fadeInLeft 1s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .hero-news-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+
+        .hero-news-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 0;
+            font-size: 1.8rem;
+        }
+
+        .hero-news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .hero-news-item {
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .hero-news-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-news-date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-news-date i {
+            font-size: 0.8rem;
+        }
+
+        .hero-news-title {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .news-excerpt {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .view-all-news {
+            margin-top: 20px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* News Marquee Styles */
+        .news-marquee {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-container {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll-left 30s linear infinite;
+        }
+
+        .marquee-item {
+            display: inline-block;
+            padding: 0 40px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .marquee-item i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .news-marquee:hover .marquee-container {
+            animation-play-state: paused;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .mission-box, .vision-box {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .mission-box:hover, .vision-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-box h3, .vision-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Food Process Section */
+        .Food-process {
+            background-color: white;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            position: relative;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Statistics Section */
+        .statistics {
+            background: linear-gradient(rgba(10, 92, 54, 0.9), rgba(10, 92, 54, 0.9)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-text {
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            animation: fadeInUp 1s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-slide {
+            padding: 40px;
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent-color);
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            opacity: 0.5;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .author-info p {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* Leadership Team - FIXED STYLES */
+        .leadership {
+            padding: 80px 0;
+            background-color: white;
+            display: block !important; /* Force display */
+            opacity: 1 !important; /* Force visibility */
+            transform: none !important; /* Remove any transforms */
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-img {
+            height: 250px;
+            overflow: hidden;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-img img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .member-name {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .member-title {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .member-bio {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* FAQs Section */
+        .faqs {
+            background-color: #f9f9f9;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .faq-item.active {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            background-color: white;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(10, 92, 54, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Leadership Carousel Styles */
+        .leadership-carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .leadership-carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 30px;
+            padding: 10px 0;
+        }
+
+        .team-member-carousel {
+            flex: 0 0 calc(20% - 24px); /* Show 5 members at a time (20% each minus gap) */
+            min-width: 0;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member-carousel:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .leadership-carousel-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .carousel-arrow {
+            color: white;
+            background-color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .leadership-carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .carousel-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .carousel-dot:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo .logo-img {
+            height: 70px;
+            margin-bottom: 15px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3:after, .footer-contact h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .team-member-carousel {
+                flex: 0 0 calc(25% - 22.5px); /* Show 4 members on smaller screens */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-slider {
+                height: 400px;
+            }
+            
+            .hero-news-container {
+                height: 400px;
+            }
+            
+            .team-member-carousel {
+                flex: 0 0 calc(33.333% - 20px); /* Show 3 members on tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 90px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: var(--transition);
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0 0 25px 0;
+            }
+            
+            .hero-container {
+                padding-top: 130px;
+                min-height: calc(100vh - 80px);
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .slide-content {
+                max-width: 95%;
+                padding: 20px;
+            }
+            
+            .arrow {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .leadership-carousel-arrows {
+                padding: 0 10px;
+            }
+            
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .team-member-carousel {
+                flex: 0 0 calc(50% - 15px); /* Show 2 members on mobile */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-container {
+                padding-top: 120px;
+                padding-bottom: 40px;
+            }
+            
+            .hero-slider {
+                height: 350px;
+            }
+            
+            .hero-news-container {
+                height: 350px;
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+            
+            .slider-arrows {
+                padding: 0 10px;
+            }
+            
+            .arrow {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .hero-news-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-member-carousel {
+                flex: 0 0 calc(100% - 0px); /* Show 1 member on very small screens */
+            }
+            
+            .carousel-arrow {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="containerr header-container">
+            <div class="logo-container">
+                <!-- Logo image space -->
+                <div class="logo-img">
+                   <img src="/image/HFA logo.jpeg" alt="HCA Logo" class="logo-img">
+                </div>
+                <div class="logo-text">
+                    <!-- <h1>Halal Food Authority</h1>
+                    <p> | Ensuring Halal Compliance</p> -->
+                </div>
+            </div>
+             
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="#management">Management Team</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a target="_blank" href="https://halal-Food-authority.vercel.app">Online Food Portal</a></li>
+                    <li><a target="_blank" href="https://halal-Food-authority.vercel.app">Login/Register</a></li>
+                    <li><a href="conatct.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Only Slider and News -->
+    <section class="hero-container" id="home">
+        <div class="containerr">
+            <div class="hero-content">
+                <!-- News Section -->
+                <div class="hero-news-section">
+                    <div class="hero-news-container">
+                        <div class="hero-news-header">
+                            <h2>Latest News & Updates</h2>
+                        </div>
+
+                        <!-- <div class="hero-news-list">
+                            <div class="hero-news-item">
+                                <div class="hero-news-date">
+                                    <i class="far fa-calendar-alt"></i> June 15, 2023
+                                </div>
+                                <h3 class="hero-news-title">New Halal Standards for Food Processing</h3>
+                                <p class="news-excerpt">HCA  releases updated guidelines for food processing facilities seeking Halal Food to align with international standards.</p>
+                            </div>
+
+                            <div class="hero-news-item">
+                                <div class="hero-news-date">
+                                    <i class="far fa-calendar-alt"></i> May 28, 2023
+                                </div>
+                                <h3 class="hero-news-title">Partnership with Saudi Food Authority</h3>
+                                <p class="news-excerpt">HCA  signs MoU with Saudi Food and Drug Authority to streamline Halal Food for n exporters.</p>
+                            </div>
+
+                            <div class="hero-news-item">
+                                <div class="hero-news-date">
+                                    <i class="far fa-calendar-alt"></i> April 10, 2023
+                                </div>
+                                <h3 class="hero-news-title">Halal Awareness Workshop in Lagos</h3>
+                                <p class="news-excerpt">Successful completion of our Halal Food workshop for restaurants and food service providers in Lagos state.</p>
+                            </div>
+
+                            <div class="hero-news-item">
+                                <div class="hero-news-date">
+                                    <i class="far fa-calendar-alt"></i> March 22, 2023
+                                </div>
+                                <h3 class="hero-news-title">New Food Portal Launch</h3>
+                                <p class="news-excerpt">We've launched a new online portal for easier application and tracking of Halal Food requests.</p>
+                            </div>
+
+                            <div class="hero-news-item">
+                                <div class="hero-news-date">
+                                    <i class="far fa-calendar-alt"></i> February 14, 2023
+                                </div>
+                                <h3 class="hero-news-title">International Recognition Achieved</h3>
+                                <p class="news-excerpt">HCA  receives accreditation from the World Halal Food Council, expanding our international recognition.</p>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="view-all-news">
+                            <a href="#" class="btn btn-accent">View All News</a>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Slider Section -->
+                <div class="hero-slider-section">
+                    <div class="hero-slider">
+                        <!-- Slide 1 -->
+                        <div class="hero-slide active" style="background-image: url('/image/548751584_1208090048006124_7895508340521619640_n.jpg');">
+                            <div class="slide-content">
+                                <h3>Food & Beverage Food</h3>
+                                <p>Comprehensive Halal Food for all types of food and beverage products.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="hero-slide" style="background-image: url('/image/554107203_1214028517412277_2595321771227849985_n.jpg');">
+                            <div class="slide-content">
+                                <h3>Restaurant & Abattoir Compliance</h3>
+                                <p>Ensuring Halal compliance in food preparation and handling establishments.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="hero-slide" style="background-image: url('/image/halal\ meet\ image.jpg');">
+                            <div class="slide-content">
+                                <h3>Cosmetics & Pharmaceuticals</h3>
+                                <p>Halal Food for personal care products and medicines.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="hero-slide" style="background-image: url('/image/554107203_1214028517412277_2595321771227849985_n.jpg');">
+                            <div class="slide-content">
+                                <h3>Export Market Access</h3>
+                                <p>Internationally recognized Food for n exporters.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                            <div class="slide-content">
+                                <h3>Trusted Halal Food</h3>
+                                <p>'s leading authority for authentic Halal Food services.</p>
+                            </div>
+                        </div>
+
+                        <div class="slider-arrows">
+                            <div class="arrow" id="prevSlide">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                            <div class="arrow" id="nextSlide">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="slider-nav" id="sliderNav">
+                            <div class="slider-btn active" data-slide="0"></div>
+                            <div class="slider-btn" data-slide="1"></div>
+                            <div class="slider-btn" data-slide="2"></div>
+                            <div class="slider-btn" data-slide="3"></div>
+                            <div class="slider-btn" data-slide="4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Marquee -->
+    <section class="news-marquee">
+        <div class="containerr">
+            <div class="marquee-container" id="marqueeContainer">
+                <!-- Marquee items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>The Halal Food Authority  (HCA) is the premier and most trusted halal Food body in . Established in 2005, we are dedicated to ensuring that products, services, and establishments comply with Islamic Shariah law and meet international halal standards.</p>
+                    <p>Our team consists of Islamic scholars, food scientists, and Food experts who work together to provide comprehensive halal Food services. We are recognized by major international halal bodies and government agencies across the globe.</p>
+                    <p>Our mission is to facilitate trade, protect Muslim consumers, and promote the halal industry in  while maintaining the highest standards of integrity and professionalism.</p>
+                    <div style="margin-top: 30px;">
+                        <a href="#process" class="btn">Apply for Food</a>
+                        <a href="#contact" class="btn btn-accent" style="margin-left: 15px;">Contact Us</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="/image/halal meet image.jpg" alt="HCA Team">
+                </div>
+            </div>
+            
+            <div class="mission-vision">
+                <div class="mission-box">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p>To provide authentic, reliable, and internationally recognized halal Food that protects Muslim consumers and facilitates halal trade in  and beyond.</p>
+                </div>
+                <div class="vision-box">
+                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                    <p>To be the leading halal Food authority in Africa, setting the standard for halal compliance and contributing to the global halal economy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Process Section -->
+    <section class="Food-process section" id="process">
+        <div class="container">
+            <h2 class="section-title">Food Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Application Submission</h3>
+                    <p>Complete and submit the halal Food application form with required documents.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Document Review</h3>
+                    <p>Our team reviews your application and documentation for completeness and compliance.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>On-Site Inspection</h3>
+                    <p>Our certified inspectors conduct a thorough on-site audit of your facilities and processes.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Food Decision</h3>
+                    <p>Based on the audit results, our Food committee makes the final decision.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Certificate Issuance</h3>
+                    <p>Successful applicants receive their halal certificate valid for one year (renewable).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team Section - NOW A CAROUSEL -->
+    <section class="leadership section" id="management">
+        <div class="containerr">
+            <h2 class="section-title">Our Leadership Team</h2>
+            <p class="text-center" style="margin-bottom: 40px; color: var(--gray-color); max-width: 800px; margin-left: auto; margin-right: auto;">
+                Meet our dedicated team of experts who work tirelessly to ensure the highest standards of Halal Food in .
+            </p>
+            
+            <!-- Leadership Carousel Container -->
+            <div class="leadership-carousel-container">
+                <!-- Carousel Track -->
+                <div class="leadership-carousel-track" id="leadershipCarouselTrack">
+                    <!-- Team Member 1 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="/image/oreagba.jpg" alt="Dr. Ahmed Ibrahim" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Dr. Ahmed Ibrahim</h3>
+                            <div class="member-title">Director General</div>
+                            <p class="member-bio">With over 20 years of experience in Islamic jurisprudence and Halal standards, Dr. Ibrahim leads HCA 's strategic direction and international relations.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="/image/tirmidhi.jpg" alt="Hajiya Fatima Abdul" onerror="this.src='data:image/svg+xml;utf8';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Hajiya Fatima Abdul</h3>
+                            <div class="member-title">Head of Food</div>
+                            <p class="member-bio">A food technologist with 15 years of Halal industry experience, Hajiya Fatima oversees all Food processes and quality assurance.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="image/WhatsApp-Image-2024-12-30-at-4.00.04-PM.jpeg" alt="Alhaji Musa Bello" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Alhaji Musa Bello</h3>
+                            <div class="member-title">Chairman, Shariah Board</div>
+                            <p class="member-bio">A respected Islamic scholar, Alhaji Musa leads the Shariah Advisory Board that ensures all HCA Foods comply with Islamic law.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 4 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="image/Alhaji-Ajala.jpeg" alt="Engr. Chinedu Okoro" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Engr. Chinedu Okoro</h3>
+                            <div class="member-title">Technical Director</div>
+                            <p class="member-bio">An engineer with expertise in food processing and quality systems, Engr. Okoro manages technical audits and facility inspections.</p>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 5 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="image/Alhaji-Ajala.jpeg" alt="Dr. Amina Yusuf" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Dr. Amina Yusuf</h3>
+                            <div class="member-title">Quality Assurance Manager</div>
+                            <p class="member-bio">With a PhD in Food Science, Dr. Yusuf ensures all certified products meet the highest quality and Halal standards through rigorous testing.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 6 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="image/Alhaji-Ajala.jpeg" alt="Alhaji Tunde Lawal" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Alhaji Tunde Lawal</h3>
+                            <div class="member-title">Finance Director</div>
+                            <p class="member-bio">An experienced financial expert who oversees HCA's financial operations and ensures sustainable growth of the organization.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 7 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="image/Alhaji-Ajala.jpeg" alt="Mrs. Zainab Mohammed" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Mrs. Zainab Mohammed</h3>
+                            <div class="member-title">Public Relations Director</div>
+                            <p class="member-bio">Responsible for HCA's communication strategy and public awareness campaigns about Halal Food importance.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 8 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="image/Alhaji-Ajala.jpeg" alt="Dr. Kabiru Sani" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Dr. Kabiru Sani</h3>
+                            <div class="member-title">Research & Development Head</div>
+                            <p class="member-bio">Leads research initiatives to develop new Halal standards and Food methodologies for emerging industries.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 9 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="image/Alhaji-Ajala.jpeg" alt="Hajiya Binta Abdullahi" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Hajiya Binta Abdullahi</h3>
+                            <div class="member-title">Training Coordinator</div>
+                            <p class="member-bio">Organizes workshops and training programs for businesses seeking to understand and implement Halal compliance.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 10 -->
+                    <div class="team-member-carousel">
+                        <div class="member-img">
+                            <img src="image/Alhaji-Ajala.jpeg" alt="Mr. Femi Adekunle" onerror="this.src='data:image/svg+xml;utf8,';">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Mr. Femi Adekunle</h3>
+                            <div class="member-title">International Relations Officer</div>
+                            <p class="member-bio">Manages HCA's relationships with international Halal Food bodies and facilitates cross-border Food recognition.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation Arrows -->
+                <div class="leadership-carousel-arrows">
+                    <div class="carousel-arrow carousel-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="carousel-arrow carousel-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Carousel Dots Navigation -->
+                <div class="leadership-carousel-dots" id="leadershipCarouselDots">
+                    <!-- Dots will be generated dynamically based on number of slides -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics section">
+        <div class="container">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1500">0</div>
+                    <div class="stat-text">Certified Businesses</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="27">0</div>
+                    <div class="stat-text">Countries Served</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-text">Satisfaction Rate</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Food Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Food & Beverages</h3>
+                    <p>Complete Halal Food for food products, beverages, and ingredients used in processing.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Restaurants & Hotels</h3>
+                    <p>Food for food service establishments to ensure Halal compliance in preparation and serving.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Export Food</h3>
+                    <p>Internationally recognized Halal certificates for businesses exporting to Muslim-majority countries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-text">
+                            "The Halal Food Authority has been instrumental in helping our food export business reach new markets in the Middle East. Their Food is widely recognized and respected."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AB</div>
+                            <div class="author-info">
+                                <h4>Alhaji Bello</h4>
+                                <p>CEO, Bella Foods Ltd.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-text">
+                            "As a restaurant owner, getting HCA Food has increased our customer base significantly. Muslim families now trust our establishment completely."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SK</div>
+                            <div class="author-info">
+                                <h4>Sarah Khalid</h4>
+                                <p>Owner, Spice Palace Restaurant</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-text">
+                            "The Food process was thorough but efficient. HCA's inspectors were professional and helped us improve our processes to meet halal standards."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MA</div>
+                            <div class="author-info">
+                                <h4>Musa Abdullahi</h4>
+                                <p>Operations Manager, FarmFresh Abattoir</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-slide="0"></div>
+                    <div class="testimonial-dot" data-slide="1"></div>
+                    <div class="testimonial-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="faqs section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is Halal Food?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Halal Food is a process that ensures products, services, and establishments comply with Islamic Shariah law. It involves inspection of ingredients, production processes, storage, and handling to guarantee they meet halal standards.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does the Food process take?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The complete Food process typically takes 4-6 weeks from application submission to certificate issuance, depending on the complexity of the operation and completeness of documentation.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How much does Halal Food cost?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Food fees vary based on the type of business, size of operation, and complexity. We offer transparent pricing with no hidden costs. Contact us for a customized quotation.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is HCA Food recognized internationally?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, HCA  is recognized by major international halal bodies including those in Saudi Arabia, UAE, Malaysia, Indonesia, and many other countries. Our Food facilitates export to Muslim-majority markets.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long is the certificate valid?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Halal certificates are typically valid for one year. Renewal involves a simplified process including documentation review and periodic inspections to ensure ongoing compliance.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Have questions about Halal Food? Our team is ready to assist you with the Food process and answer any questions you may have.</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 9A,Wing 1, Abiodun Fashakin Crecent,Behind Former Lasu Campus,Anthony, Lagos,</p>
+                        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> (+234) 803 721 8855</p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@halalcert.com.ng</p>
+                        <p><i class="fas fa-clock"></i> <strong>Business Hours:</strong> Mon - Fri: 8:00 AM - 5:00 PM</p>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" style="margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                            <a href="#" style="margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" style="margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                            <a href="#" style="font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="business">Business Name</label>
+                            <input type="text" id="business" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="food">Food & Beverages Food</option>
+                                <option value="restaurant">Restaurant & Hotel Food</option>
+                                <option value="cosmetics">Cosmetics & Pharmaceuticals</option>
+                                <option value="export">Export Food</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-img">
+                        <img src="/image/HFA logo.jpeg" alt="HCA Logo">
+                    </div>
+                    <div class="footer-about">
+                        <p>The Halal Food Authority  is the leading body for Halal Food in , ensuring products and services comply with Islamic Shariah law.</p>
+                        <a href="#process" class="btn">Get Certified</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#management">Management Team</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a target="_blank" href="https://halal-Food-authority.vercel.app">Login/Register</a></li>
+
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Unit 15, Linen House, 253 Kilburn Lane, Queen's Park London, W10 4BQ United Kingdom</p>
+                    <p><i class="fas fa-phone"></i> +44(0)2084467127</p>
+                    <p><i class="fas fa-envelope"></i> info@halalfoodauthority.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" style="margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="date"></span> Halal Certification Authority . All rights reserved. | <a href="#" style="color: #d4af37;">Privacy Policy</a> | <a href="#" style="color: #d4af37;">Terms of Use</a> <br>
+                Design and Development by <a target="_blank" style="color: #d4af37;"href="https://theyoungpioneers.com/">Theyoungpioneers</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
+      import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC-rfIMVhvTtOoCfy54TRKd_uBtV6Rm_BU",
+        authDomain: "halal-cert-ba673.firebaseapp.com",
+        projectId: "halal-cert-ba673",
+        storageBucket: "halal-cert-ba673.firebasestorage.app",
+        messagingSenderId: "134058623053",
+        appId: "1:134058623053:web:383d36bc4f37081ab45c04",
+        measurementId: "G-QF58M6YP7R"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+
+      window.db = db;
+    </script>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Hero Slider Functionality
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const sliderBtns = document.querySelectorAll('.slider-btn');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            sliderBtns.forEach(btn => btn.classList.remove('active'));
+            heroSlides[index].classList.add('active');
+            sliderBtns[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        sliderBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => showSlide(index));
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = currentSlide > 0 ? currentSlide - 1 : heroSlides.length - 1;
+            showSlide(currentSlide);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = currentSlide < heroSlides.length - 1 ? currentSlide + 1 : 0;
+            showSlide(currentSlide);
+        });
+
+        let slideInterval = setInterval(() => {
+            currentSlide = currentSlide < heroSlides.length - 1 ? currentSlide + 1 : 0;
+            showSlide(currentSlide);
+        }, 5000);
+
+        const heroSlider = document.querySelector('.hero-slider');
+        heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        heroSlider.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                currentSlide = currentSlide < heroSlides.length - 1 ? currentSlide + 1 : 0;
+                showSlide(currentSlide);
+            }, 5000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Testimonial Slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            testimonialSlides[index].classList.add('active');
+            testimonialDots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showTestimonial(index));
+        });
+
+        setInterval(() => {
+            currentTestimonial = currentTestimonial < testimonialSlides.length - 1 ? currentTestimonial + 1 : 0;
+            showTestimonial(currentTestimonial);
+        }, 7000);
+
+        // FAQs Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                faqItems.forEach(otherItem => {
+                    if(otherItem !== item) otherItem.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            alert(`Thank you ${name}! Your message has been received. We will contact you at ${email} shortly.`);
+            contactForm.reset();
+        });
+
+        // Animated Statistics Counter
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const statsSection = document.querySelector('.statistics');
+
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if(current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 20);
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-count'));
+                        animateCounter(stat, target);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statsObserver.observe(statsSection);
+
+        // Leadership Carousel Functionality
+        const leadershipCarouselTrack = document.getElementById('leadershipCarouselTrack');
+        const leadershipCarouselDots = document.getElementById('leadershipCarouselDots');
+        const carouselPrevBtn = document.querySelector('.carousel-prev');
+        const carouselNextBtn = document.querySelector('.carousel-next');
+        
+        let currentCarouselPosition = 0;
+        let carouselAutoSlideInterval;
+        let totalTeamMembers = 0;
+        let membersPerView = 5;
+        let totalSlides = 0;
+
+        function initializeCarousel() {
+            const teamMembers = document.querySelectorAll('.team-member-carousel');
+            totalTeamMembers = teamMembers.length;
+            
+            // Calculate how many slides we need
+            // For 10 members showing 5 at a time, we need 6 slides (0-5, 1-6, 2-7, 3-8, 4-9, 5-10)
+            totalSlides = totalTeamMembers - membersPerView + 1;
+            
+            // Generate dots
+            leadershipCarouselDots.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'carousel-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('data-slide', i);
+                leadershipCarouselDots.appendChild(dot);
+            }
+            
+            // Set initial position
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            // Calculate the width of one member including gap
+            const memberWidth = document.querySelector('.team-member-carousel').offsetWidth;
+            const gap = 30; // Match the gap in CSS
+            const totalWidth = memberWidth + gap;
+            
+            // Move the carousel track
+            leadershipCarouselTrack.style.transform = `translateX(-${currentCarouselPosition * totalWidth}px)`;
+            
+            // Update active dot
+            document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentCarouselPosition);
+            });
+        }
+
+        function nextCarouselSlide() {
+            if (currentCarouselPosition < totalSlides - 1) {
+                currentCarouselPosition++;
+            } else {
+                currentCarouselPosition = 0; // Loop back to start
+            }
+            updateCarousel();
+        }
+
+        function prevCarouselSlide() {
+            if (currentCarouselPosition > 0) {
+                currentCarouselPosition--;
+            } else {
+                currentCarouselPosition = totalSlides - 1; // Loop to end
+            }
+            updateCarousel();
+        }
+
+        function goToCarouselSlide(index) {
+            currentCarouselPosition = index;
+            updateCarousel();
+            resetCarouselAutoSlide();
+        }
+
+        // Auto-slide functionality
+        function startCarouselAutoSlide() {
+            carouselAutoSlideInterval = setInterval(nextCarouselSlide, 5000);
+        }
+
+        function resetCarouselAutoSlide() {
+            clearInterval(carouselAutoSlideInterval);
+            startCarouselAutoSlide();
+        }
+
+        // Load news from Firestore
+        async function loadNews() {
+            try {
+                const q = query(collection(window.db, 'news'), orderBy('createdAt', 'desc'));
+                const querySnapshot = await getDocs(q);
+
+                const heroNewsList = document.querySelector('.hero-news-list');
+                const marqueeContainer = document.getElementById('marqueeContainer');
+
+                if (querySnapshot.empty) {
+                    heroNewsList.innerHTML = `
+                        
+                    `;
+
+                    marqueeContainer.innerHTML = `
+                        <div class="marquee-item">
+                            <i class="fas fa-newspaper"></i> New Halal Standards for Food Processing - HCA eleases updated guidelines for food processing facilities seeking Halal certification to align with international standards.
+                        </div>
+                        <div class="marquee-item">
+                            <i class="fas fa-handshake"></i> Partnership with Saudi Food Authority - HCA igns MoU with Saudi Food and Drug Authority to streamline Halal certification for exporters.
+                        </div>
+                        <div class="marquee-item">
+                            <i class="fas fa-users"></i> Halal Awareness Workshop in Lagos - Successful completion of our Halal certification workshop for restaurants and food service providers in Lagos state.
+                        </div>
+                        <div class="marquee-item">
+                            <i class="fas fa-globe"></i> New Certification Portal Launch - We've launched a new online portal for easier application and tracking of Halal certification requests.
+                        </div>
+                        <div class="marquee-item">
+                            <i class="fas fa-award"></i> International Recognition Achieved - HCA eceives accreditation from the World Halal Food Council, expanding our international recognition.
+                        </div>
+                    `;
+                    return;
+                }
+
+                const newsArray = [];
+                querySnapshot.forEach((doc) => newsArray.push(doc.data()));
+
+                const heroNewsHTML = newsArray.slice(0, 5).map(news => `
+                    <div class="hero-news-item">
+                        <div class="hero-news-date">
+                            <i class="far fa-calendar-alt"></i> ${news.date}
+                        </div>
+                        <h3 class="hero-news-title">${news.title}</h3>
+                        <p class="news-excerpt">${news.excerpt}</p>
+                    </div>
+                `).join('');
+
+                heroNewsList.innerHTML = heroNewsHTML;
+
+                const marqueeItems = newsArray.slice(0, 5).map(news => `
+                    <div class="marquee-item">
+                        <i class="fas fa-newspaper"></i> ${news.title} - ${news.excerpt}
+                    </div>
+                `).join('');
+
+                marqueeContainer.innerHTML = marqueeItems;
+
+            } catch (error) {
+                console.error('Error loading news:', error);
+            }
+        }
+        const dateSpan = document.getElementById('date');
+        const currentYear = new Date().getFullYear();
+        dateSpan.textContent = currentYear;
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNews();
+            
+            // Initialize leadership carousel
+            setTimeout(() => {
+                initializeCarousel();
+                
+                // Event listeners for arrows
+                if (carouselPrevBtn && carouselNextBtn) {
+                    carouselPrevBtn.addEventListener('click', () => {
+                        prevCarouselSlide();
+                        resetCarouselAutoSlide();
+                    });
+                    
+                    carouselNextBtn.addEventListener('click', () => {
+                        nextCarouselSlide();
+                        resetCarouselAutoSlide();
+                    });
+                }
+                
+                // Event listeners for dots
+                document.querySelectorAll('.carousel-dot').forEach(dot => {
+                    dot.addEventListener('click', function() {
+                        const slideIndex = parseInt(this.getAttribute('data-slide'));
+                        goToCarouselSlide(slideIndex);
+                    });
+                });
+                
+                // Start auto-slide
+                startCarouselAutoSlide();
+                
+                // Pause auto-slide on hover
+                const leadershipCarouselContainer = document.querySelector('.leadership-carousel-container');
+                if (leadershipCarouselContainer) {
+                    leadershipCarouselContainer.addEventListener('mouseenter', () => {
+                        clearInterval(carouselAutoSlideInterval);
+                    });
+                    
+                    leadershipCarouselContainer.addEventListener('mouseleave', () => {
+                        startCarouselAutoSlide();
+                    });
+                }
+            }, 100); // Small delay to ensure DOM is ready
+        });
+
+        
+    </script>
+</body>
+</html>
